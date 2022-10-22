@@ -24,7 +24,7 @@ h1{
     text-align: center;
 }
 
-h1, form label, form button{
+h1, form label, form button,form span{
     font-family: 'Indie Flower', cursive;
 }
 
