@@ -5,7 +5,32 @@ window.onload = function(){
     formBtn.onclick = main;
 }
 
+function changeHeading(){
+    let heading =<HTMLElement>this;
+    let red = Math.floor(Math.random() * 255 + 1);
+    let green = Math.floor(Math.random() * 255 + 1);
+    let blue = Math.floor(Math.random() * 255 + 1);
+    let color = "rgb(" + red + "," + green + "," + 
+                    blue + ");";
+    heading.style.color = "rgb(" + red + "," + green + "," + 
+                            blue + ")";
+    console.log(color);
+    heading.style.color = color;
+    console.log(heading.style.color);
+}
+
 function main():void{
+    let msgHeading = document.createElement("h2");
+    msgHeading.innerText = "Processing form";
+    let h1 = document.querySelector("h1");
+    
+    h1.insertAdjacentElement("afterend", msgHeading);
+    msgHeading.setAttribute("class", "message");
+
+    setTimeout(function(){
+        msgHeading.remove();
+    }, 20000)
+
     resetErrorMessages();
     isTextPresent("first-name", "First name is required");
     isTextPresent("last-name", "Last name is required");
